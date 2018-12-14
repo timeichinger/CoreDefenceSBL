@@ -32,6 +32,8 @@ public class Constants {
     public static final int CORE_SIZE = 130;
     public static final Color CORE_COLOR = Color.TRANSPARENT;
     public static final int TOLERANCE = 5;
+
+    //URL:
     public static final String EARTH_SRC = "data/assets/earth.png";
 
     //Constants for class Player
@@ -46,6 +48,8 @@ public class Constants {
 
     //Constants for class Projectile
     public static final Color PROJECTILE_COLOR = Color.TRANSPARENT;
+
+    //Meteorit Image was selfdesigned in Adobe Photoshop
     public static final String PROJECTILE_IMAGE_SRC = "data/assets/meteorit.png";
 
     //Constants for class ProjectileGenerator
@@ -58,7 +62,11 @@ public class Constants {
     //Constansts for class SatrtScreen
     public static final int TEXT_FONTSIZE_GAME_NAME = 40;
     public static final int TEXT_FONTSIZE_START_GAME = 24;
+
+    //URL:https://www.br.de/themen/wissen/meteoriten-einschlag-krater-100.html, 10.12.18
     public static final String LOGO_SRC = "data/assets/logo.png";
+
+    //Selfdesigned in Adobe Photoshop
     public static final String COLOR_PICK_SRC = "data/assets/selectplayercolor.png";
     public static final int LOGO_WIDTH = 200;
     public static final int LOGO_HEIGHT = 120;
@@ -73,7 +81,11 @@ public class Constants {
     public static final Color TEXT_COLOR_GAMEOVERSCREEN = Color.ORANGE;
 
     //Constants for class GameManager
+
+    //URL:
     public static final Sound SHOT_SOUND = new Sound("/data/assets/projectilesound.wav");
+
+    //URL
     public static final Sound EXPLOSION_SOUND = new Sound("/data/assets/explosion.wav");
     public static final int GAME_STATE_RUNNING = 2;
     public static final int GAME_STATE_STARTED = 1;
