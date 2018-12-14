@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run Orbiter" type="Applet" factoryName="Applet" singleton="true">
+    <option name="MAIN_CLASS_NAME" value="CoreDefense" />
+    <option name="POLICY_FILE" value="file://$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+    <option name="WIDTH" value="0" />
+    <module name="OOP-18WS-SL2-Starter" />
+    <option name="HEIGHT" value="0" />
+    <method />
+  </configuration>
+</component>

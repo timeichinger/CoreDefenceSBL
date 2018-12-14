@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ProcessingOO-2.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/ProcessingOO.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
