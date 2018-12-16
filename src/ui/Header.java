@@ -1,5 +1,6 @@
 package ui;
 
+import config.Constants;
 import de.ur.mi.graphics.Label;
 import de.ur.mi.graphics.Rect;
 import ui.interfaces.LabelHelper;

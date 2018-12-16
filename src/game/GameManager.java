@@ -1,5 +1,6 @@
 package game;
 
+import config.Constants;
 import de.ur.mi.geom.Point;
 import de.ur.mi.graphics.Color;
 import de.ur.mi.graphics.Label;
@@ -7,7 +8,7 @@ import de.ur.mi.graphics.Label;
 import ui.*;
 import ui.enums.ColorType;
 import ui.enums.MovementType;
-import ui.enums.UIType;
+import ui.enums.GameStateType;
 import ui.interfaces.LabelHelper;
 import world.*;
 
@@ -110,12 +111,12 @@ public class GameManager implements LabelHelper {
     }
 
     //This method handles what happens when the method is called, when a specific Key Press happens
-    public void transmitStartRestartPressCommand(UIType startType) {
-        if (startType.equals(UIType.RESTART)) {
+    public void transmitStartRestartPressCommand(GameStateType startType) {
+        if (startType.equals(GameStateType.RESTART)) {
             resetGame();
-        } else if (startType.equals(UIType.START)) {
+        } else if (startType.equals(GameStateType.START)) {
             startGame();
-        } else if (startType.equals(UIType.CLOSE)) {
+        } else if (startType.equals(GameStateType.CLOSE)) {
             System.exit(0);
         }
     }

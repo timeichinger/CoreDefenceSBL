@@ -5,7 +5,7 @@ import de.ur.mi.graphics.Color;
 import de.ur.mi.graphics.Line;
 import ui.interfaces.Collideable;
 import ui.enums.MovementType;
-import ui.Constants;
+import config.Constants;
 
 public class Player implements Collideable {
 

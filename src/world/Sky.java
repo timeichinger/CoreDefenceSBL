@@ -3,7 +3,7 @@ package world;
 import de.ur.mi.geom.Point;
 import de.ur.mi.graphics.Image;
 import de.ur.mi.util.RandomGenerator;
-import ui.Constants;
+import config.Constants;
 
 public class Sky {
 

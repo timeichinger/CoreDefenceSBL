@@ -1,6 +1,6 @@
 package ui.enums;
 
-public enum UIType {
+public enum GameStateType {
     RESTART,
     START,
     CLOSE

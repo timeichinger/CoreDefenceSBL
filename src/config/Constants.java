@@ -1,4 +1,4 @@
-package ui;
+package config;
 
 import de.ur.mi.graphics.Color;
 import de.ur.mi.sound.Sound;

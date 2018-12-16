@@ -1,5 +1,6 @@
 package ui;
 
+import config.Constants;
 import de.ur.mi.graphics.Color;
 import de.ur.mi.graphics.Image;
 import de.ur.mi.graphics.Label;

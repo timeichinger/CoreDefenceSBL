@@ -4,7 +4,7 @@ import de.ur.mi.geom.Point;
 import de.ur.mi.graphics.Ellipse;
 import de.ur.mi.graphics.Image;
 import ui.interfaces.Collideable;
-import ui.Constants;
+import config.Constants;
 
 public class Core implements Collideable {
 

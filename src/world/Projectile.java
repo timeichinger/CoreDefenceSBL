@@ -1,11 +1,10 @@
 package world;
 
 import de.ur.mi.geom.Point;
-import de.ur.mi.graphics.Color;
 import de.ur.mi.graphics.Ellipse;
 import de.ur.mi.graphics.GraphicsObject;
 import de.ur.mi.graphics.Image;
-import ui.Constants;
+import config.Constants;
 
 public class Projectile {
 

@@ -1,10 +1,10 @@
+import config.Constants;
 import de.ur.mi.graphics.Color;
 import de.ur.mi.graphicsapp.GraphicsApp;
 import game.GameManager;
-import ui.*;
 import ui.enums.ColorType;
 import ui.enums.MovementType;
-import ui.enums.UIType;
+import ui.enums.GameStateType;
 
 import java.awt.event.KeyEvent;
 
@@ -83,7 +83,7 @@ public class CoreDefense extends GraphicsApp {
             if (e.getKeyCode() == KeyEvent.VK_SPACE) {
                 keyStartPressedCounter++;
                 keyColorPressedCounter++;
-                gameManager.transmitStartRestartPressCommand(UIType.START);
+                gameManager.transmitStartRestartPressCommand(GameStateType.START);
             }
         }
     }
@@ -91,9 +91,9 @@ public class CoreDefense extends GraphicsApp {
     private void handleRestartCloseEvent(KeyEvent e) {
         if (keyStartPressedCounter == 1) {
             if (e.getKeyCode() == KeyEvent.VK_R) {
-                gameManager.transmitStartRestartPressCommand(UIType.RESTART);
+                gameManager.transmitStartRestartPressCommand(GameStateType.RESTART);
             } else if (e.getKeyCode() == KeyEvent.VK_C) {
-                gameManager.transmitStartRestartPressCommand(UIType.CLOSE);
+                gameManager.transmitStartRestartPressCommand(GameStateType.CLOSE);
             }
         }
 
