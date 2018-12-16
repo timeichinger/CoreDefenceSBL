@@ -94,8 +94,8 @@ public class Player implements Collideable {
     }
 
     private void calculateStartAndEndOfPlayerLine() {
-        startPosLinePlayer = calculateOrbitPosition(orbitCenter, range+coreSize, angle-(Constants.ANGLE_LINE_BALANCE /(range+coreSize)));
-        endPosLinePlayer = calculateOrbitPosition(orbitCenter, range+coreSize, angle+(Constants.ANGLE_LINE_BALANCE /(range+coreSize)));
+        startPosLinePlayer = calculateOrbitPosition(orbitCenter, range+(coreSize/2), angle-(Constants.ANGLE_LINE_BALANCE /(range+(coreSize/2))));
+        endPosLinePlayer = calculateOrbitPosition(orbitCenter, range+(coreSize/2), angle+(Constants.ANGLE_LINE_BALANCE /(range+(coreSize/2))));
     }
 
     @Override

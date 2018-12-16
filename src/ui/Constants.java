@@ -41,7 +41,7 @@ public class Constants {
     public static final double ANGLE_SPEED = 4.0;
     public static final double RANGE_SPEED = 3.0;
     public static final double MAX_RANGE = 150.0;
-    public static final double MIN_RANGE = 10.0;
+    public static final double MIN_RANGE = 35.0;
     public static final double ANGLE_LINE_BALANCE = 900.0;
     public static final int PLAYER_TOLERANCE = 15;
     public static final double PLAYER_LINE_BORDERWEIGHT = 13.0;
@@ -91,7 +91,7 @@ public class Constants {
     public static final int GAME_STATE_STARTED = 1;
     public static final int GAME_STATE_ENDED = 0;
     public static final int GAME_STATE_FIRST_START = -1;
-    public static final double PLAYER_START_RANGE = 10.0;
+    public static final double PLAYER_START_RANGE = 40.0;
     public static final double PLAYER_START_ANGLE = 90.0;
     public static final double STAR_SPARKLING_PROPORTION = 90;
     public static final Color TEXT_COLOR_COUNTDOWN = Color.YELLOW;
