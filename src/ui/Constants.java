@@ -13,7 +13,7 @@ public class Constants {
 
 
     //Constants for class Sky
-    public static final int NUMBER_OF_STARS = 100;
+    public static final int NUMBER_OF_STARS = 110;
     public static final int STARS_MAX_SIZE = 10;
     public static final int STARS_MIN_SIZE = 4;
     public static final String STAR_SRC = "data/assets/star.png";
