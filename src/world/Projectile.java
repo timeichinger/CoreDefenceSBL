@@ -35,7 +35,8 @@ public class Projectile {
         directionX = corePos.getX() - projectile.getX();
         directionY = corePos.getY() - projectile.getY();
 
-        double length = Math.sqrt(this.directionX*this.directionX + this.directionY*this.directionY);
+        double length = Math.sqrt(directionX*directionX + directionY*directionY);
+
         if (length != 0) {
             directionX = directionX/length;
             directionY = directionY/length;

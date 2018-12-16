@@ -13,7 +13,7 @@ public class Player implements Collideable {
     private double angle;
     private double range;
 
-    private int coreSize;
+    private double coreRadius;
 
     private MovementType typeOrbit;
     private MovementType typeRange;
@@ -26,7 +26,7 @@ public class Player implements Collideable {
     public Player(Point orbitCenter, double startRange, double startAngle, double coreRadius) {
 
         this.orbitCenter = orbitCenter;
-        this.coreSize = (int) (coreRadius*2);
+        this.coreRadius = coreRadius;
         angle = startAngle;
         range = startRange;
 
@@ -71,14 +71,22 @@ public class Player implements Collideable {
     private void updateRange() {
         if (typeRange != null) {
             if (typeRange.equals(MovementType.RANGE_UP)) {
-                if ((range+Constants.RANGE_SPEED) <= Constants.MAX_RANGE) {
-                    range += Constants.RANGE_SPEED;
-                }
+                rangeUp();
             } else if (typeRange.equals(MovementType.RANGE_DOWN)) {
-                if ((range-Constants.RANGE_SPEED) >= Constants.MIN_RANGE) {
-                    range -= Constants.RANGE_SPEED;
-                }
+                rangeDown();
             }
+        }
+    }
+
+    private void rangeDown() {
+        if ((range-Constants.RANGE_SPEED) >= Constants.MIN_RANGE) {
+            range -= Constants.RANGE_SPEED;
+        }
+    }
+
+    private void rangeUp() {
+        if ((range+Constants.RANGE_SPEED) <= Constants.MAX_RANGE) {
+            range += Constants.RANGE_SPEED;
         }
     }
 
@@ -94,13 +102,22 @@ public class Player implements Collideable {
     }
 
     private void calculateStartAndEndOfPlayerLine() {
-        startPosLinePlayer = calculateOrbitPosition(orbitCenter, range+(coreSize/2), angle-(Constants.ANGLE_LINE_BALANCE /(range+(coreSize/2))));
-        endPosLinePlayer = calculateOrbitPosition(orbitCenter, range+(coreSize/2), angle+(Constants.ANGLE_LINE_BALANCE /(range+(coreSize/2))));
+        startPosLinePlayer = calculateOrbitPosition(orbitCenter, getRangeFromCenter(), angle-(Constants.ANGLE_LINE_BALANCE /getRangeFromCenter()));
+        endPosLinePlayer = calculateOrbitPosition(orbitCenter, getRangeFromCenter(), angle+(Constants.ANGLE_LINE_BALANCE /getRangeFromCenter()));
+    }
+
+    private double getRangeFromCenter() {
+        return range+coreRadius;
     }
 
     @Override
     public boolean collidesWith(Projectile projectile) {
-        return projectile.distanceTo(player) <= ((player.getBorderWeight()/2) + projectile.getRadius()) + Constants.PLAYER_TOLERANCE && projectile.distanceTo(player) >= ((player.getBorderWeight()/2) + projectile.getRadius()) - Constants.PLAYER_TOLERANCE;
+        return projectile.distanceTo(player) <= (getSumOfObjectsRadius(projectile) + Constants.PLAYER_TOLERANCE) && projectile.distanceTo(player) >= (getSumOfObjectsRadius(projectile) - Constants.PLAYER_TOLERANCE);
+    }
+
+    @Override
+    public double getSumOfObjectsRadius(Projectile projectile) {
+        return (player.getBorderWeight()/2) + projectile.getRadius();
     }
 
     public void setPlayerColor(Color color) {

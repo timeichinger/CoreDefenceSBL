@@ -21,7 +21,7 @@ public class GameOverScreen implements LabelHelper {
         lbEndScore = new Label(0,0, "Your score: 20", Constants.TEXT_COLOR_GAMEOVERSCREEN, Constants.TEXT_FONTSIZE_GAMEOVER);
         lbEndScore.setPosition(centerLabelHorizontal(getLabelLength(lbEndScore)), lbGameOver.getY() + 50);
 
-        earthDestroyed = new Image(0, 0, 200, 200, "data/assets/earthdestroyed.png");
+        earthDestroyed = new Image(0, 0, Constants.GAME_OVER_IMAGE_SIZE, Constants.GAME_OVER_IMAGE_SIZE, Constants.GAME_OVER_IMAGE_SRC);
         earthDestroyed.setPosition(Constants.CANVAS_CENTER_X - (earthDestroyed.getWidth()/2), 20);
 
     }

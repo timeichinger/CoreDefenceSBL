@@ -89,11 +89,14 @@ public class CoreDefense extends GraphicsApp {
     }
 
     private void handleRestartCloseEvent(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_R) {
-            gameManager.transmitStartRestartPressCommand(UIType.RESTART);
-        } else if (e.getKeyCode() == KeyEvent.VK_C) {
-            gameManager.transmitStartRestartPressCommand(UIType.CLOSE);
+        if (keyStartPressedCounter == 1) {
+            if (e.getKeyCode() == KeyEvent.VK_R) {
+                gameManager.transmitStartRestartPressCommand(UIType.RESTART);
+            } else if (e.getKeyCode() == KeyEvent.VK_C) {
+                gameManager.transmitStartRestartPressCommand(UIType.CLOSE);
+            }
         }
+
     }
 
     private void handleMovementEvent(KeyEvent e) {

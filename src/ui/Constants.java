@@ -32,9 +32,7 @@ public class Constants {
     public static final int CORE_SIZE = 130;
     public static final Color CORE_COLOR = Color.TRANSPARENT;
     public static final int TOLERANCE = 5;
-
-    //URL:
-    public static final String EARTH_SRC = "data/assets/earth.png";
+    public static final String EARTH_SRC = "data/assets/earth.png"; //URL:
 
     //Constants for class Player
     public static final Color PLAYER_COLOR = Color.ORANGE;
@@ -48,9 +46,7 @@ public class Constants {
 
     //Constants for class Projectile
     public static final Color PROJECTILE_COLOR = Color.TRANSPARENT;
-
-    //Meteorit Image was selfdesigned in Adobe Photoshop
-    public static final String PROJECTILE_IMAGE_SRC = "data/assets/meteorit.png";
+    public static final String PROJECTILE_IMAGE_SRC = "data/assets/meteorit.png"; //Meteorit Image was selfdesigned in Adobe Photoshop
 
     //Constants for class ProjectileGenerator
     public static final int PROJECTILE_MIN_SIZE = 30;
@@ -62,12 +58,8 @@ public class Constants {
     //Constansts for class SatrtScreen
     public static final int TEXT_FONTSIZE_GAME_NAME = 40;
     public static final int TEXT_FONTSIZE_START_GAME = 24;
-
-    //URL:https://www.br.de/themen/wissen/meteoriten-einschlag-krater-100.html, 10.12.18
-    public static final String LOGO_SRC = "data/assets/logo.png";
-
-    //Selfdesigned in Adobe Photoshop
-    public static final String COLOR_PICK_SRC = "data/assets/selectplayercolor.png";
+    public static final String LOGO_SRC = "data/assets/logo.png"; //URL:https://www.br.de/themen/wissen/meteoriten-einschlag-krater-100.html, 10.12.18
+    public static final String COLOR_PICK_SRC = "data/assets/selectplayercolor.png"; //Selfdesigned in Adobe Photoshop
     public static final int LOGO_WIDTH = 200;
     public static final int LOGO_HEIGHT = 120;
     public static final int COLOR_PICKER_WIDTH = 180;
@@ -79,6 +71,8 @@ public class Constants {
     public static final int TEXT_FONTSIZE_RESTART = 18;
     public static final int TEXT_FONTSIZE_GAMEOVER = 24;
     public static final Color TEXT_COLOR_GAMEOVERSCREEN = Color.ORANGE;
+    public static final int GAME_OVER_IMAGE_SIZE = 200;
+    public static final String GAME_OVER_IMAGE_SRC = "data/assets/earthdestroyed.png";
 
     //Constants for class GameManager
 

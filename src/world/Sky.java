@@ -24,7 +24,7 @@ public class Sky {
 
     public void update() {
         if(frameCounter >= 40) {
-            for (int i = 0; i < (Constants.NUMBER_OF_STARS * (this.starProportion / 100)); i++) {
+            for (int i = 0; i < (Constants.NUMBER_OF_STARS * (starProportion / 100)); i++) {
                 sparklingStars[i] = random.nextInt(0, allStars.length - 1);
             }
             frameCounter = 0;

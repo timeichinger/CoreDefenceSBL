@@ -10,14 +10,12 @@ public class Core implements Collideable {
 
     private Ellipse target;
     private Image targetImage;
-    private Point orbitCenter;
 
 
     public Core(Point orbitCenter) {
-        this.orbitCenter = orbitCenter;
-        target = new Ellipse(this.orbitCenter, Constants.CORE_SIZE, Constants.CORE_SIZE, Constants.CORE_COLOR);
-        targetImage = new Image(this.orbitCenter, Constants.CORE_SIZE, Constants.CORE_SIZE, Constants.EARTH_SRC);
-        targetImage.setPosition(this.orbitCenter.getX() - (targetImage.getWidth()/2), this.orbitCenter.getY() - (targetImage.getHeight()/2));
+        target = new Ellipse(orbitCenter, Constants.CORE_SIZE, Constants.CORE_SIZE, Constants.CORE_COLOR);
+        targetImage = new Image(orbitCenter, Constants.CORE_SIZE, Constants.CORE_SIZE, Constants.EARTH_SRC);
+        targetImage.setPosition(orbitCenter.getX() - (targetImage.getWidth()/2), orbitCenter.getY() - (targetImage.getHeight()/2));
 
     }
 
@@ -32,6 +30,11 @@ public class Core implements Collideable {
 
     @Override
     public boolean collidesWith(Projectile projectile) {
-        return projectile.distanceTo(target) <= (getCoreRadius() + projectile.getRadius()) + Constants.TOLERANCE && projectile.distanceTo(target) >= (getCoreRadius() + projectile.getRadius()) - Constants.TOLERANCE;
+        return projectile.distanceTo(target) <= (getSumOfObjectsRadius(projectile) + Constants.TOLERANCE) && projectile.distanceTo(target) >= (getSumOfObjectsRadius(projectile) - Constants.TOLERANCE);
+    }
+
+    @Override
+    public double getSumOfObjectsRadius(Projectile projectile) {
+        return getCoreRadius() + projectile.getRadius();
     }
 }

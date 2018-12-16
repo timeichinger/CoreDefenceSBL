@@ -28,7 +28,7 @@ public class GameManager implements LabelHelper {
     private Label lbCountdown;
 
     private int gameState = Constants.GAME_STATE_FIRST_START;
-    private int count = Constants.COUNTDOWN_NUM;
+    private int countdownCounter = Constants.COUNTDOWN_NUM;
 
     public GameManager() {
         setupGameObjects();
@@ -68,7 +68,7 @@ public class GameManager implements LabelHelper {
     }
 
 
-    //The draw method calls other methods in despendence of the gameState
+    //The draw method calls other methods in dependence of the gameState
     public void draw() {
         switch (gameState) {
             case Constants.GAME_STATE_STARTED:
@@ -139,7 +139,7 @@ public class GameManager implements LabelHelper {
                 startScreen.setPlayerColorString("YELLOW");
                 break;
         }
-        startScreen.updateSelectedTypesLabel();
+        startScreen.updateSelectedColorLabel();
     }
 
     private void startGame() {
@@ -153,7 +153,7 @@ public class GameManager implements LabelHelper {
         projectileGenerator.resetSpeed();
         gameState = Constants.GAME_STATE_STARTED;
         projectile = projectileGenerator.newProjectile();
-        count = Constants.COUNTDOWN_NUM;
+        countdownCounter = Constants.COUNTDOWN_NUM;
         startTimer();
     }
 
@@ -210,8 +210,8 @@ public class GameManager implements LabelHelper {
     private void handlePlayerCollidesWithProjectile() {
         Header.points++;
 
-        //in this if-condition is checked, whether the points can be divided by 10.
-        // So the condition is true, when points equals to 10,20,30,...
+        //In this if-condition is checked, whether the points can be divided by 10.
+        //So the condition is true, when points equals to 10,20,30,...
         //And if the condition is true, the level gets increased
         if (Header.points % 10 == 0 && Header.points != 0) {
             Header.level += 1;
@@ -222,18 +222,18 @@ public class GameManager implements LabelHelper {
         Constants.SHOT_SOUND.play();
     }
 
-    //This method creates and starts a new Timer, which starts at count(=5)
+    //This method creates and starts a new Timer, which starts at countdownCounter(=5)
     private void startTimer() {
         Timer timer = new Timer();
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                if (count > 0)
-                    lbCountdown.setText(String.valueOf(count));
-                    count--;
+                if (countdownCounter > 0)
+                    lbCountdown.setText(String.valueOf(countdownCounter));
+                    countdownCounter--;
 
-                if (count == 0) {
-                    lbCountdown.setText(String.valueOf(count));
+                if (countdownCounter == 0) {
+                    lbCountdown.setText(String.valueOf(countdownCounter));
                     gameState = Constants.GAME_STATE_RUNNING;Constants.SHOT_SOUND.play();
                     timer.cancel();
                 }

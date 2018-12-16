@@ -41,7 +41,7 @@ public class ProjectileGenerator {
         size = random.nextInt(Constants.PROJECTILE_MIN_SIZE, Constants.PROJECTILE_MAX_SIZE);
     }
 
-    //This method modifys the projectileStartPoint, by a new random Point, which is always out of the displayed Panel.
+    //This method modifies the projectileStartPoint, by a new random Point, which is always out of the displayed Panel.
     private void setStartPosition() {
 
         //different cases are: 1=west, 2=north, 3=east, 4=south
