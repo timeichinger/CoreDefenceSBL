@@ -230,6 +230,7 @@ public class GameManager implements LabelHelper {
         }
     }
 
+    //This method handles the collision between the core and a projectile
     private void handleCoreCollidesWithProjectile() {
         Constants.EXPLOSION_SOUND.play();
         Header.lives--;
@@ -240,6 +241,7 @@ public class GameManager implements LabelHelper {
 
     }
 
+    //This method handles the collision between the playerLine and a projectile
     private void handlePlayerCollidesWithProjectile() {
         Header.points++;
 
