@@ -9,7 +9,6 @@ import ui.*;
 import ui.enums.ColorType;
 import ui.enums.MovementType;
 import ui.enums.GameStateType;
-import ui.interfaces.ImageHelper;
 import ui.interfaces.LabelHelper;
 import world.*;
 
@@ -32,28 +31,52 @@ public class GameManager implements LabelHelper {
     private int gameState = Constants.GAME_STATE_FIRST_START;
     private int countdownCounter = Constants.COUNTDOWN_NUM;
 
+    //Makes sure gameOver sound is just played at the end of a game
+    private int gameOverSoundCounter = 0;
+
     public GameManager() {
         setupGameObjects();
+        handleGameStateStarted();
+
+    }
+
+    private void handleGameStateStarted() {
         if (gameState == Constants.GAME_STATE_STARTED) {
             startTimer();
         }
-
     }
 
 
     public void update() {
-        if (Header.lives == 0) {
-            gameState = Constants.GAME_STATE_ENDED;
-        }
+        handlePlayerNullLives();
+        handleUpdateGameStateStarted();
+        handleUpdateGameStateRunning();
+    }
 
-        if (gameState == Constants.GAME_STATE_STARTED) {
-            updateObjectsWhileGameStarted();
-        }
-
+    private void handleUpdateGameStateRunning() {
         if (gameState == Constants.GAME_STATE_RUNNING) {
             updateObjectsWhileGameRunning();
         }
+    }
 
+    private void handleUpdateGameStateStarted() {
+        if (gameState == Constants.GAME_STATE_STARTED) {
+            updateObjectsWhileGameStarted();
+        }
+    }
+
+    private void handlePlayerNullLives() {
+        if (Header.lives == 0) {
+            gameState = Constants.GAME_STATE_ENDED;
+            playGameOverSound();
+        }
+    }
+
+    private void playGameOverSound() {
+        if (gameOverSoundCounter == 0) {
+            Constants.GAME_OVER_SOUND.play();
+            gameOverSoundCounter++;
+        }
     }
 
     private void updateObjectsWhileGameStarted() {
@@ -146,18 +169,21 @@ public class GameManager implements LabelHelper {
 
     private void startGame() {
         gameState = Constants.GAME_STATE_STARTED;
+        gameOverSoundCounter = 0;
         startTimer();
     }
 
-    //This method resets all stats, the speed, sets the gamestate to Game started and resets the timer.
+    //This method resets all stats, the speed, sets the gameState to Game started and resets the timer.
     private void resetGame() {
         header.resetStats();
         projectileGenerator.resetSpeed();
         gameState = Constants.GAME_STATE_STARTED;
+        gameOverSoundCounter = 0;
         projectile = projectileGenerator.newProjectile();
         countdownCounter = Constants.COUNTDOWN_NUM;
         startTimer();
     }
+
 
 
     public void transmitMovementCommand(MovementType type) {

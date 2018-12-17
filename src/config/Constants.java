@@ -32,7 +32,7 @@ public class Constants {
     public static final int CORE_SIZE = 130;
     public static final Color CORE_COLOR = Color.TRANSPARENT;
     public static final int COLLIDING_TOLERANCE_CORE = 5;
-    public static final String EARTH_SRC = "data/assets/earth.png"; //URL:
+    public static final String EARTH_SRC = "data/assets/earth.png"; //URL: http://halofanon.wikia.com/wiki/File:Earth.png, 9.12.18
 
     //Constants for class Player
     public static final Color PLAYER_COLOR = Color.ORANGE;
@@ -46,7 +46,7 @@ public class Constants {
 
     //Constants for class Projectile
     public static final Color PROJECTILE_COLOR = Color.TRANSPARENT;
-    public static final String PROJECTILE_IMAGE_SRC = "data/assets/meteorit.png"; //Meteorit Image was selfdesigned in Adobe Photoshop
+    public static final String PROJECTILE_IMAGE_SRC = "data/assets/meteorite.png"; //URL: https://www.newsx.com/science-and-technology/asteroid-florence-to-safely-pass-by-earth-on-september-1, 10.12.18
 
     //Constants for class ProjectileGenerator
     public static final int PROJECTILE_MIN_SIZE = 30;
@@ -73,11 +73,14 @@ public class Constants {
     public static final int TEXT_FONTSIZE_GAMEOVER = 24;
     public static final Color TEXT_COLOR_GAMEOVERSCREEN = Color.ORANGE;
     public static final int GAME_OVER_IMAGE_SIZE = 200;
-    public static final String GAME_OVER_IMAGE_SRC = "data/assets/earthdestroyed.png";
+    public static final String GAME_OVER_IMAGE_SRC = "data/assets/earthdestroyed.png"; //URL: https://www.gamespot.com/forums/alliance-command-909187109/earth-war-destruction-and-hope-thread-of-the-futur-10061357/, 13.12.18
+    public static final String GAME_OVER_TEXT = "Game Over! The earth was completely destroyed by meteorites";
+    public static final String RESTART_CLOSE_TEXT = " + + + PRESS (R) TO RESTART | PRESS (C) TO CLOSE THE GAME + + + ";
 
     //Constants for class GameManager
-    public static final Sound SHOT_SOUND = new Sound("/data/assets/projectilesound.wav"); //URL:
-    public static final Sound EXPLOSION_SOUND = new Sound("/data/assets/explosion.wav"); //URL
+    public static final Sound SHOT_SOUND = new Sound("/data/assets/projectilesound.wav"); //URL: https://www.youtube.com/watch?v=b0INmd5xEdE, 13.12.18
+    public static final Sound EXPLOSION_SOUND = new Sound("/data/assets/explosion.wav"); //URL: https://www.youtube.com/watch?v=-Yh-f_i9BTo, 13.12.18
+    public static final Sound GAME_OVER_SOUND = new Sound("/data/assets/gameover.wav"); //URL: https://www.youtube.com/watch?v=4LraQHWyJ0U, 17.12.18
     public static final int GAME_STATE_RUNNING = 2;
     public static final int GAME_STATE_STARTED = 1;
     public static final int GAME_STATE_ENDED = 0;
@@ -90,6 +93,7 @@ public class Constants {
 
     //Constants for class CoreDefence
     public static final int FRAMERATE = 60;
+
 
 
 }
