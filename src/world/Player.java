@@ -113,7 +113,7 @@ public class Player implements Collideable {
 
     @Override
     public boolean collidesWith(Projectile projectile) {
-        return projectile.distanceTo(player) <= (getSumOfObjectsRadius(projectile) + Constants.PLAYER_TOLERANCE) && projectile.distanceTo(player) >= (getSumOfObjectsRadius(projectile) - Constants.PLAYER_TOLERANCE);
+        return projectile.distanceTo(player) <= (getSumOfObjectsRadius(projectile) + Constants.COLLIDING_TOLERANCEPLAYER) && projectile.distanceTo(player) >= (getSumOfObjectsRadius(projectile) - Constants.COLLIDING_TOLERANCEPLAYER);
     }
 
     @Override

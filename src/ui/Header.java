@@ -20,12 +20,12 @@ public class Header implements LabelHelper {
 
         headerContainer = new Rect(0,0, Constants.HEADER_CONTAINER_WIDTH, Constants.HEADER_CONTAINER_HEIGHT, Constants.CONTAINER_COLOR);
 
-        lbPoints = new Label(headerContainer.getX()+10, headerContainer.getY() + (headerContainer.getHeight()-15), "0 Punkte", Constants.TEXT_COLOR_HEADER, Constants.TEXT_FONTSIZE);
+        lbPoints = new Label(headerContainer.getX()+10, headerContainer.getY() + (headerContainer.getHeight()-15), "0 Punkte", Constants.TEXT_COLOR_HEADER, Constants.TEXT_FONTSIZE_HEADER);
 
-        lbLives = new Label(0, 0, "X Lives remain", Constants.TEXT_COLOR_HEADER, Constants.TEXT_FONTSIZE);
+        lbLives = new Label(0, 0, "X Lives remain", Constants.TEXT_COLOR_HEADER, Constants.TEXT_FONTSIZE_HEADER);
         lbLives.setPosition(centerLabelHorizontal(getLabelLength(lbLives)), headerContainer.getHeight()-15);
 
-        lbLevel = new Label(0,0, "Level 1", Constants.TEXT_COLOR_HEADER, Constants.TEXT_FONTSIZE);
+        lbLevel = new Label(0,0, "Level 1", Constants.TEXT_COLOR_HEADER, Constants.TEXT_FONTSIZE_HEADER);
         lbLevel.setPosition(Constants.CANVAS_WIDTH - getLabelLength(lbLevel) - 10, headerContainer.getHeight()-15);
 
     }

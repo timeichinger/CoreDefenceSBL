@@ -21,17 +21,17 @@ public class Constants {
     //Constants for class Header
     public static final Color CONTAINER_COLOR = Color.DARK_GRAY;
     public static final Color TEXT_COLOR_HEADER = Color.GREEN;
-    public static final int TEXT_FONTSIZE = 24;
+    public static final int TEXT_FONTSIZE_HEADER = 24;
     public static final int HEADER_CONTAINER_HEIGHT = 50;
     public static final int HEADER_CONTAINER_WIDTH = CANVAS_WIDTH;
-    public static final int LIVES = 2;
+    public static final int LIVES = 6;
     public static final int START_LEVEL = 1;
     public static final int START_POINTS = 0;
 
     //Constants for class Core
     public static final int CORE_SIZE = 130;
     public static final Color CORE_COLOR = Color.TRANSPARENT;
-    public static final int TOLERANCE = 5;
+    public static final int COLLIDING_TOLERANCE_CORE = 5;
     public static final String EARTH_SRC = "data/assets/earth.png"; //URL:
 
     //Constants for class Player
@@ -41,7 +41,7 @@ public class Constants {
     public static final double MAX_RANGE = 150.0;
     public static final double MIN_RANGE = 35.0;
     public static final double ANGLE_LINE_BALANCE = 900.0;
-    public static final int PLAYER_TOLERANCE = 15;
+    public static final int COLLIDING_TOLERANCEPLAYER = 15;
     public static final double PLAYER_LINE_BORDERWEIGHT = 13.0;
 
     //Constants for class Projectile
@@ -51,8 +51,8 @@ public class Constants {
     //Constants for class ProjectileGenerator
     public static final int PROJECTILE_MIN_SIZE = 30;
     public static final int PROJECTILE_MAX_SIZE = 50;
-    public static final double PROJECTILE_MIN_START_SPEED = 2.0;
-    public static final double PROJECTILE_MAX_START_SPEED = 3.0;
+    public static final double PROJECTILE_MIN_START_SPEED = 3.0;
+    public static final double PROJECTILE_MAX_START_SPEED = 4.0;
     public static final double PROJECTILE_LEVEL_SPEED_UP = 1.0;
 
     //Constansts for class StartScreen

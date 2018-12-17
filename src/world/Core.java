@@ -30,7 +30,7 @@ public class Core implements Collideable {
 
     @Override
     public boolean collidesWith(Projectile projectile) {
-        return projectile.distanceTo(target) <= (getSumOfObjectsRadius(projectile) + Constants.TOLERANCE) && projectile.distanceTo(target) >= (getSumOfObjectsRadius(projectile) - Constants.TOLERANCE);
+        return projectile.distanceTo(target) <= (getSumOfObjectsRadius(projectile) + Constants.COLLIDING_TOLERANCE_CORE) && projectile.distanceTo(target) >= (getSumOfObjectsRadius(projectile) - Constants.COLLIDING_TOLERANCE_CORE);
     }
 
     @Override
