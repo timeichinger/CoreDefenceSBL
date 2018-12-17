@@ -3,9 +3,10 @@ package ui;
 import config.Constants;
 import de.ur.mi.graphics.Image;
 import de.ur.mi.graphics.Label;
+import ui.interfaces.ImageHelper;
 import ui.interfaces.LabelHelper;
 
-public class GameOverScreen implements LabelHelper {
+public class GameOverScreen implements LabelHelper, ImageHelper {
 
     private Label lbRestart;
     private Label lbGameOver;
@@ -23,7 +24,7 @@ public class GameOverScreen implements LabelHelper {
         lbEndScore.setPosition(centerLabelHorizontal(getLabelLength(lbEndScore)), lbGameOver.getY() + 50);
 
         earthDestroyed = new Image(0, 0, Constants.GAME_OVER_IMAGE_SIZE, Constants.GAME_OVER_IMAGE_SIZE, Constants.GAME_OVER_IMAGE_SRC);
-        earthDestroyed.setPosition(Constants.CANVAS_CENTER_X - (earthDestroyed.getWidth()/2), 20);
+        earthDestroyed.setPosition(centerImageHorizontal(earthDestroyed.getWidth()), 20);
 
     }
 
@@ -43,5 +44,10 @@ public class GameOverScreen implements LabelHelper {
     @Override
     public double centerLabelHorizontal(double labelLength) {
         return Constants.CANVAS_CENTER_X - (labelLength / 2);
+    }
+
+    @Override
+    public double centerImageHorizontal(double imageLength) {
+        return Constants.CANVAS_CENTER_X - (imageLength / 2);
     }
 }

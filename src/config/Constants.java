@@ -55,17 +55,18 @@ public class Constants {
     public static final double PROJECTILE_MAX_START_SPEED = 3.0;
     public static final double PROJECTILE_LEVEL_SPEED_UP = 1.0;
 
-    //Constansts for class SatrtScreen
+    //Constansts for class StartScreen
     public static final int TEXT_FONTSIZE_GAME_NAME = 40;
     public static final int TEXT_FONTSIZE_START_GAME = 24;
     public static final String LOGO_SRC = "data/assets/logo.png"; //URL:https://www.br.de/themen/wissen/meteoriten-einschlag-krater-100.html, 10.12.18
-    public static final String COLOR_PICK_SRC = "data/assets/selectplayercolor.png"; //Selfdesigned in Adobe Photoshop
+    public static final String COLOR_PICK_SRC = "data/assets/selectplayercolor.png"; //Self Designed in Adobe Photoshop
     public static final int LOGO_WIDTH = 200;
     public static final int LOGO_HEIGHT = 120;
     public static final int COLOR_PICKER_WIDTH = 180;
     public static final int COLOR_PICKER_HEIGHT = 164;
     public static final Color TEXT_COLOR_GAME_NAME = Color.CYAN;
     public static final Color TEXT_COLOR_START_GAME = Color.YELLOW;
+    public static final String START_GAME_TEXT = "PRESS (SPACE) ON KEYBOARD TO START THE GAME";
 
     //Constants for class GameOverScreen
     public static final int TEXT_FONTSIZE_RESTART = 18;
@@ -75,12 +76,8 @@ public class Constants {
     public static final String GAME_OVER_IMAGE_SRC = "data/assets/earthdestroyed.png";
 
     //Constants for class GameManager
-
-    //URL:
-    public static final Sound SHOT_SOUND = new Sound("/data/assets/projectilesound.wav");
-
-    //URL
-    public static final Sound EXPLOSION_SOUND = new Sound("/data/assets/explosion.wav");
+    public static final Sound SHOT_SOUND = new Sound("/data/assets/projectilesound.wav"); //URL:
+    public static final Sound EXPLOSION_SOUND = new Sound("/data/assets/explosion.wav"); //URL
     public static final int GAME_STATE_RUNNING = 2;
     public static final int GAME_STATE_STARTED = 1;
     public static final int GAME_STATE_ENDED = 0;
@@ -92,6 +89,7 @@ public class Constants {
     public static final int COUNTDOWN_NUM = 5;
 
     //Constants for class CoreDefence
-    public static final int FRAMERATE = 90;
+    public static final int FRAMERATE = 60;
+
 
 }

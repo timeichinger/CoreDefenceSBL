@@ -31,19 +31,30 @@ public class Header implements LabelHelper {
     }
 
     public void update() {
-        if (points == 1) {
-            lbPoints.setText(String.valueOf(points) + " Point");
-        } else {
-            lbPoints.setText(String.valueOf(points) + " Points");
-        }
+        updatePoints();
+        updateLife();
+        updateLevel();
 
+    }
+
+    private void updateLevel() {
+        lbLevel.setText("Level " + String.valueOf(level));
+    }
+
+    private void updateLife() {
         if (lives == 1) {
             lbLives.setText(String.valueOf(lives) + " Life left");
         } else {
             lbLives.setText(String.valueOf(lives) + " Lives left");
         }
+    }
 
-        lbLevel.setText("Level " + String.valueOf(level));
+    private void updatePoints() {
+        if (points == 1) {
+            lbPoints.setText(String.valueOf(points) + " Point");
+        } else {
+            lbPoints.setText(String.valueOf(points) + " Points");
+        }
     }
 
     public void draw() {

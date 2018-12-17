@@ -23,6 +23,8 @@ public class Projectile {
         this.speed = speed;
 
         projectile = new Ellipse(startPoint, size, size, Constants.PROJECTILE_COLOR);
+
+        //projectileImage is set to thw position where the projctile is, so it looks like the projectile is a meteorite.
         projectileImage = new Image(startPoint, size, size, Constants.PROJECTILE_IMAGE_SRC);
         projectileImage.setPosition(projectile.getX()-(projectileImage.getWidth()/2), projectile.getY() - (projectileImage.getHeight()/2));
 
@@ -30,6 +32,7 @@ public class Projectile {
 
     }
 
+    //This method creates the vector for a projectile and normalizes it.
     private void setDirection() {
         directionX = corePos.getX() - projectile.getX();
         directionY = corePos.getY() - projectile.getY();

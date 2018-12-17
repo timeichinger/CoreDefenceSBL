@@ -9,6 +9,7 @@ import ui.*;
 import ui.enums.ColorType;
 import ui.enums.MovementType;
 import ui.enums.GameStateType;
+import ui.interfaces.ImageHelper;
 import ui.interfaces.LabelHelper;
 import world.*;
 

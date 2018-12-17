@@ -23,15 +23,22 @@ public class Sky {
     }
 
     public void update() {
+        //This if-condition makes sure, that just all 40 frames, the drawn stars should be changed.
         if(frameCounter >= 40) {
-            for (int i = 0; i < (Constants.NUMBER_OF_STARS * (starProportion / 100)); i++) {
-                sparklingStars[i] = random.nextInt(0, allStars.length - 1);
-            }
-            frameCounter = 0;
+            updateSparklingStars();
         }
         frameCounter++;
     }
 
+    //This method updates the sparkling stars array and selects indirectly which stars should be drawn next.
+    private void updateSparklingStars() {
+        for (int i = 0; i < (Constants.NUMBER_OF_STARS * (starProportion / 100)); i++) {
+            sparklingStars[i] = random.nextInt(0, allStars.length - 1);
+        }
+        frameCounter = 0;
+    }
+
+    //The public draw method draws all stars, which were selected to be drawn (Array sparklingStars) before in the update method.
     public void draw() {
         for (int i = 0; i < Constants.NUMBER_OF_STARS; i++) {
             for (int sparklingStar : sparklingStars) {
@@ -42,6 +49,7 @@ public class Sky {
         }
     }
 
+    //This method creates one star and adds it to the allStars arrray.
     private void createStar(int i) {
         int size = getNextSize();
         Point centerPoint = getNextPoint(size);
@@ -49,16 +57,19 @@ public class Sky {
         allStars[i] = oneStar;
     }
 
+    //This method creates all stars out of the method createStar
     private void createStars() {
         for (int i = 0; i < Constants.NUMBER_OF_STARS; i++) {
             createStar(i);
         }
     }
 
+    //This method creates a random size for a star
     private int getNextSize() {
         return random.nextInt(Constants.STARS_MIN_SIZE, Constants.STARS_MAX_SIZE);
     }
 
+    //This method creates a random new point in the canvas.
     private Point getNextPoint(int size) {
 
         int lowerX = size / 2;

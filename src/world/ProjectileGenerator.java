@@ -24,7 +24,7 @@ public class ProjectileGenerator {
     }
 
     /*newProjectile() is a public Method,which sets the attributes of an existing projectile
-     *to the newly generated Attributes, which were created by the Method setNewAttributes()*/
+      to the newly generated Attributes, which were created by the Method setNewAttributes()*/
     public Projectile newProjectile() {
         setnewAttributes();
         return new Projectile(corePos, projectileStartPoint, size, speed);

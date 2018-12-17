@@ -101,6 +101,7 @@ public class Player implements Collideable {
         player.setDimension(startPosLinePlayer.getX(), startPosLinePlayer.getY(), endPosLinePlayer.getX(), endPosLinePlayer.getY());
     }
 
+    //This method calculates start and endpoint of the player line and makes sure, the line has always the sam length.
     private void calculateStartAndEndOfPlayerLine() {
         startPosLinePlayer = calculateOrbitPosition(orbitCenter, getRangeFromCenter(), angle-(Constants.ANGLE_LINE_BALANCE /getRangeFromCenter()));
         endPosLinePlayer = calculateOrbitPosition(orbitCenter, getRangeFromCenter(), angle+(Constants.ANGLE_LINE_BALANCE /getRangeFromCenter()));
