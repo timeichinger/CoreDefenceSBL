@@ -58,7 +58,7 @@ public class Constants {
     //Constansts for class StartScreen
     public static final int TEXT_FONTSIZE_GAME_NAME = 40;
     public static final int TEXT_FONTSIZE_START_GAME = 24;
-    public static final String LOGO_SRC = "data/assets/logo.png"; //URL:https://www.br.de/themen/wissen/meteoriten-einschlag-krater-100.html, 10.12.18
+    public static final String LOGO_SRC = "data/assets/logo.png"; //URL: https://www.br.de/themen/wissen/meteoriten-einschlag-krater-100.html, 10.12.18
     public static final String COLOR_PICK_SRC = "data/assets/selectplayercolor.png"; //Self Designed in Adobe Photoshop
     public static final int LOGO_WIDTH = 200;
     public static final int LOGO_HEIGHT = 120;
@@ -90,6 +90,7 @@ public class Constants {
     public static final double STAR_SPARKLING_PROPORTION = 90;
     public static final Color TEXT_COLOR_COUNTDOWN = Color.YELLOW;
     public static final int COUNTDOWN_NUM = 5;
+    public static final int TIMER_PERIOD = 1000;
 
     //Constants for class CoreDefence
     public static final int FRAMERATE = 60;

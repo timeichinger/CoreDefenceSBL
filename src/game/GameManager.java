@@ -53,18 +53,21 @@ public class GameManager implements LabelHelper {
         handleUpdateGameStateRunning();
     }
 
+    //This method handles the objects-update, when the game is running
     private void handleUpdateGameStateRunning() {
         if (gameState == Constants.GAME_STATE_RUNNING) {
             updateObjectsWhileGameRunning();
         }
     }
 
+    //This method handles the objects-update, when the game started
     private void handleUpdateGameStateStarted() {
         if (gameState == Constants.GAME_STATE_STARTED) {
             updateObjectsWhileGameStarted();
         }
     }
 
+    //This method handles the case when the player has null lives left
     private void handlePlayerNullLives() {
         if (Header.lives == 0) {
             gameState = Constants.GAME_STATE_ENDED;
@@ -72,6 +75,7 @@ public class GameManager implements LabelHelper {
         }
     }
 
+    //If the game is over, the GAME OVER SOUND is played
     private void playGameOverSound() {
         if (gameOverSoundCounter == 0) {
             Constants.GAME_OVER_SOUND.play();
@@ -148,23 +152,24 @@ public class GameManager implements LabelHelper {
     public void transmitPlayerColorPickPressCommand(ColorType colorType) {
         switch (colorType) {
             case BLUE:
-                player.setPlayerColor(Color.BLUE);
-                startScreen.setPlayerColorString("BLUE");
+                updatePlayerColor(Color.BLUE, "BLUE");
                 break;
             case GREEN:
-                player.setPlayerColor(Color.GREEN);
-                startScreen.setPlayerColorString("GREEN");
+                updatePlayerColor(Color.GREEN, "GREEN");
                 break;
             case ORANGE:
-                player.setPlayerColor(Color.ORANGE);
-                startScreen.setPlayerColorString("ORANGE");
+                updatePlayerColor(Color.ORANGE, "ORANGE");
                 break;
             case YELLOW:
-                player.setPlayerColor(Color.YELLOW);
-                startScreen.setPlayerColorString("YELLOW");
+                updatePlayerColor(Color.YELLOW, "YELLOW");
                 break;
         }
         startScreen.updateSelectedColorLabel();
+    }
+
+    private void updatePlayerColor(Color color, String colorString) {
+        player.setPlayerColor(color);
+        startScreen.setPlayerColorString(colorString);
     }
 
     private void startGame() {
@@ -262,12 +267,13 @@ public class GameManager implements LabelHelper {
 
                 if (countdownCounter == 0) {
                     lbCountdown.setText(String.valueOf(countdownCounter));
-                    gameState = Constants.GAME_STATE_RUNNING;Constants.SHOT_SOUND.play();
+                    gameState = Constants.GAME_STATE_RUNNING;
+                    Constants.SHOT_SOUND.play();
                     timer.cancel();
                 }
             }
         };
-        timer.schedule(task, 0, 1000);
+        timer.schedule(task, 0, Constants.TIMER_PERIOD);
     }
 
     @Override
